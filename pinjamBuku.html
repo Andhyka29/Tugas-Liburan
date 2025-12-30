@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Form Peminjaman Buku</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/x-icon" href="images/logo1.png">
+    </head>
+
+    <body class="bg-gradient-to-br from-gray-950 to-sky-800">
+        <!-- alert card -->
+        <div id="alertBox"
+            class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50">
+
+            <div class="bg-white rounded-xl shadow-xl w-96 p-6 text-center animate-scale">
+                <h2 id="alertTitle" class="text-xl font-bold mb-3 text-red-600">
+                    Peringatan
+                </h2>
+
+                <p id="alertMessage" class="text-gray-700 mb-5">
+                    Pesan alert
+                </p>
+
+                <button onclick="closeAlert()"
+                    class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg"> Close
+                </button>
+            </div>
+        </div>
+
+        <div class="min-h-screen flex items-center justify-center px-4 py-8">
+            <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- INFO BUKU -->
+                <div id="infoBuku"
+                    class="bg-white/10 backdrop-blur-md rounded-xl p-6 flex flex-col items-center text-center shadow-xl">
+
+                    <img id="imgBuku"
+                        class="w-40 md:w-52 rounded-lg shadow-lg mb-4 object-cover" />
+
+                    <h2 id="judulBuku"
+                        class="text-2xl font-bold text-white mb-2">
+                    </h2>
+
+                    <p id="deskripsiBuku"
+                        class="text-gray-200 text-sm md:text-base leading-relaxed">
+                    </p>
+                </div>
+
+                <!-- FORM PINJAM -->
+                <div class="bg-white rounded-xl shadow-xl p-8">
+
+                    <img src="images/logo1.png" class="h-14 mb-6 mx-auto">
+
+                    <form id="pinjamForm" class="space-y-5">
+                        <h1 class="text-3xl font-semibold text-center mb-4">
+                            Peminjaman Buku
+                        </h1>
+
+                        <!-- Nama Buku -->
+                        <div>
+                            <label class="block text-sm font-medium mb-1">
+                                Nama Buku
+                            </label>
+                            <input
+                                id="namaBuku"
+                                type="text"
+                                class="w-full border rounded-md px-4 py-3 bg-gray-100 text-gray-700"
+                                readonly>
+                        </div>
+
+                        <!-- Batas Peminjaman -->
+                        <div>
+                            <label class="block text-sm font-medium mb-1">
+                                Batas Peminjaman
+                            </label>
+                            <select id="borrowBatasHari"
+                                class="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-sky-800 outline-none">
+                                <option value="7">7 Days</option>
+                                <option value="10">10 Days</option>
+                                <option value="15">15 Days</option>
+                                <option value="20">20 Days</option>
+                                <option value="30">30 Days</option>
+                            </select>
+                        </div>
+
+                        <!-- Tombol -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <button type="submit"
+                                class="flex-1 bg-green-800 hover:bg-green-600 text-white py-3 rounded-lg transition">
+                                Submit
+                            </button>
+
+                            <a href="index.html"
+                                class="flex-1 bg-red-800 hover:bg-red-600 text-white py-3 rounded-lg text-center transition">
+                                Back
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="javascript/pinjam.js"></script>
+    </body>
+</html>

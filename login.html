@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/x-icon" href="images/logo1.png">
+    </head>
+
+    <body class="bg-gradient-to-br from-gray-950 to-sky-800">
+        <!-- alert card -->
+        <div id="alertBox"
+            class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50">
+
+            <div class="bg-white rounded-xl shadow-xl w-96 p-6 text-center animate-scale">
+                <h2 id="alertTitle" class="text-xl font-bold mb-3 text-red-600">
+                    Peringatan
+                </h2>
+
+                <p id="alertMessage" class="text-gray-700 mb-5">
+                    Pesan alert
+                </p>
+
+                <button onclick="closeAlert()"
+                    class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg">
+                    OK
+                </button>
+            </div>
+        </div>
+
+        <div class="min-h-screen flex">
+            <div class="w-1/3 hidden md:block">
+                <img src="images/wallpaper2.png" class="w-full h-full object-cover">
+            </div>
+
+            <!-- form -->
+            <div class="flex-1 flex items-center justify-center border-solid border-black border-l-4">
+                <div class="bg-white w-full p-10 max-w-2xl shadow-xl shadow-black rounded-lg">
+
+                    <img src="images/logo1.png" class="h-14 mb-6">
+
+                    <!-- login form -->
+                    <div id="loginForm">
+                        <h1 class="text-3xl font-semibold text-center mb-6">Login</h1>
+
+                        <div class="relative mb-6">
+                            <input id="loginEmail" type="email" placeholder="Email" for="loginEmail"
+                                class="peer w-full border rounded-md px-4 py-4 mb-4 placeholder-transparent
+                                focus:ring-2 focus:ring-sky-800 focus:border-sky-800 outline-none">
+                            <label class="floatingLogin">
+                                Your Email
+                            </label>
+                        </div>
+
+                        <div class="relative mb-8">
+                            <input id="loginPassword" type="password" placeholder="Password" for="loginPassword"
+                                class="peer w-full border rounded-md px-4 py-4 mb-4 placeholder-transparent
+                                focus:ring-2 focus:ring-sky-800 focus:border-sky-800 outline-none">
+                            <label class="floatingLogin">
+                                Your Password
+                            </label>
+                        </div>
+
+                        <button id="login"
+                            class="w-full bg-red-900 hover:bg-red-700 text-white py-3 rounded-md mb-4 transition-all duration-200">
+                            Login
+                        </button>
+
+                        <p onclick="toggleForm()" class="text-sm text-center text-red-700 cursor-pointer hover:underline">
+                            Belum punya akun ya? Daftar dulu yuk
+                        </p>
+                    </div>
+
+                    <!-- register form -->
+                    <div id="registerForm" class="hidden">
+                        <h1 class="text-3xl font-semibold text-center mb-6">Register</h1>
+
+                        <div class="relative mb-4">
+                            <input id="regUsername" placeholder="Username" for="regUsername"
+                                class="peer w-full border rounded-md px-4 py-4 mb-3 placeholder-transparent
+                                focus:ring-2 focus:ring-sky-800 focus:border-sky-800 outline-none">
+                            <label class="floatingLogin">Username</label>
+                        </div>
+
+                        <div class="relative mb-6">
+                            <input id="regKtp" placeholder="Nomor KTP"
+                                class="peer w-full border rounded-md px-4 py-4 mb-3 placeholder-transparent
+                                focus:ring-2 focus:ring-sky-800 focus:border-sky-800 outline-none">
+                            <label class="floatingLogin">KTP Number (must be 16 digits)</label>
+                        </div>
+                        
+                        <div class="relative mb-4">
+                            <input id="regEmail" placeholder="Email"
+                                class="peer w-full border rounded-md px-4 py-4 mb-3 placeholder-transparent
+                                focus:ring-2 focus:ring-sky-800 focus:border-sky-800 outline-none">
+                            <label class="floatingLogin">User Email</label>
+                        </div>
+
+                        <div class="relative mb-4">
+                            <input id="regPassword" type="password" placeholder="Password"
+                                class="peer w-full border rounded-md px-4 py-4 mb-3 placeholder-transparent
+                                focus:ring-2 focus:ring-sky-800 focus:border-sky-800 outline-none">
+                            <label class="floatingLogin">User Password</label>
+                        </div>
+
+                        <div class="relative mb-4">
+                            <input id="regPassword2" type="password" placeholder="Password"
+                                class="peer w-full border rounded-md px-4 py-4 mb-3 placeholder-transparent
+                                focus:ring-2 focus:ring-sky-800 focus:border-sky-800 outline-none">
+                            <label class="floatingLogin">Confirm User Password</label>
+                        </div>
+
+                        <button id="register"
+                            class="w-full bg-red-900 hover:bg-red-700 text-white py-3 rounded-md mb-4 transition-all duration-200">
+                            Register
+                        </button>
+
+                        <p onclick="toggleForm()" class="text-sm text-center text-blue-600 cursor-pointer hover:underline">
+                            Sudah punya akun? Tinggal Login aja
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="javascript/login.js"></script>
+    </body>
+</html>
