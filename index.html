@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Growing Library</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/x-icon" href="images/logo1.png">
+    </head>
+
+    <body class="bg-gradient-to-br from-gray-950 to-sky-900 overflow-x-hidden scroll-smooth">
+        <!-- alert card -->
+        <div id="alertBox"
+            class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50">
+
+            <div class="bg-white rounded-xl shadow-xl w-96 p-6 text-center animate-scale">
+                <h2 id="alertTitle" class="text-xl font-bold mb-3 text-red-600">
+                    Peringatan
+                </h2>
+
+                <p id="alertMessage" class="text-gray-700 mb-5">
+                    Pesan alert
+                </p>
+
+                <button onclick="closeAlert()"
+                        class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg">
+                    OK
+                </button>
+            </div>
+        </div>
+        
+        <!-- navbar -->
+        <nav class="fixed top-0 z-50 w-full h-16 md:h-20 bg-gray-950 bg-opacity-90 px-6 md:px-10
+            flex justify-between items-center shadow-lg">
+
+            <div class="flex items-center">
+                <img src="images/logo1.png" alt="Logo" class="h-14 md:h-16 w-auto">
+            </div>
+
+            <!-- tombol hamburger -->
+            <button onclick="toggleMenu()"
+                class="text-white focus:outline-none z-50">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+
+        <div id="menuOverlay"
+            onclick="toggleMenu()"
+            class="fixed inset-0 bg-black/50 z-40 hidden transition-opacity">
+        </div>
+
+        <!-- slide Menu -->
+        <div id="sideMenu"
+            class="fixed top-0 right-0 h-full w-72 md:w-96 bg-gray-950 text-white z-50
+            transform translate-x-full transition-transform duration-300 ease-in-out
+            flex flex-col pt-24 px-6 space-y-6">
+
+            <a href="#homePage" id="btnHomePage"
+                class="border border-white py-3 text-center rounded-lg hover:bg-white hover:text-black transition">
+                Home
+            </a>
+
+            <a href="#riwayatSection"
+                class="border border-white py-3 text-center rounded-lg hover:bg-white hover:text-black transition">
+                Riwayat Peminjaman
+            </a>
+            
+            <a href="about.html"
+                class="border border-white py-3 text-center rounded-lg hover:bg-white hover:text-black transition">
+                About Us
+            </a>
+
+            <a href="admin.html"
+                class="border border-white py-3 text-center rounded-lg hover:bg-blue-900 transition">
+                Admin
+            </a>
+
+            <a href="login.html"
+                class="border border-white py-3 text-center rounded-lg hover:bg-green-900 transition">
+                Log In
+            </a>
+
+            <button onclick="logout()"
+                class="border border-white py-3 text-center rounded-lg hover:bg-red-900 transition">
+                Log Out
+            </button>
+        </div>
+
+        <!-- header -->
+        <header id="headerPage" class="min-h-screen placeholder-stone-200 border-b-4 border-black shadow-lg shadow-black">
+            <div class="header">
+                <h1 class="hero-text text-white text-center text-xl md:text-7xl font-bold mt-10 mb-12">
+                    Welcome to Growing Library
+                </h1>
+
+                <p class="hero-text text-white text-center text-sm md:text-xl mb-6">
+                    "Setiap buku adalah pintu menuju dunia baru,
+                    dan Anda berada di gerbangnya."
+                </p>
+
+                <p class="hero-text text-white text-center text-sm md:text-xl mb-16">
+                    Temukan duniamu bersama kami di sini.
+                </p>
+
+                <a href="#homePage">
+                    <button id="btnHomePage2" class="hero-text inline-block w-fit bg-red-900 hover:bg-red-600 hover:border-2 hover:border-white transition 
+                        duration-150 text-white text-sm md:text-md px-14 md:px-20 py-2 md:py-4 rounded-lg font-medium opacity-0 translate-y-10">
+                        Open Page
+                    </button>
+                </a>
+            </div>
+        </header>
+        
+        <!-- homepage -->
+        <div class="hidden" id="homePage">
+            <!-- katalog buku -->
+            <div id="bookGallery">
+                <h2 class="text-white text-xl md:text-4xl font-bold text-center pt-24">
+                    Home Page
+                </h2>
+
+                <div id="bookList"
+                    class="bg-gray-800 bg-opacity-70 mt-10 mx-5 md:mx-10 grid grid-cols-1 md:grid-cols-4 gap-6 p-10 border-2 border-gray-900">
+                </div>
+            </div>
+
+            <!-- riwayat peminjaman -->
+            <div id="riwayatSection" class="bg-gray-800 bg-opacity-50 px-10 py-10 m-16 mx-3 md:mx-10 border-2 border-gray-900">
+                <h2 class="text-white text-xl md:text-4xl font-bold mb-4 text-center">Riwayat Peminjaman</h2>
+
+                <div id="riwayatList"
+                    class="grid grid-cols-1 md:grid-cols-2 gap-6 rounded-md p-6 mt-12 mx-1 md:mx-10 ">    
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div id="footerPage" class="bg-gray-900 text-white text-sm md:text-md py-4 text-center bottom-0 m-0 hidden">
+                <p>&copy; 2025 Growing Library. All rights reserved.</p>
+            </div>
+        </div>
+
+        <script src="javascript/data.js"></script>
+        <script src="javascript/buku.js"></script>
+    </body>
+</html>
+
+
