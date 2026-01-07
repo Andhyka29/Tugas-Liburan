@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const session = JSON.parse(sessionStorage.getItem("sessionLogin"));
+        const session = JSON.parse(sessionStorage.getItem("sessionLogin")) || null;
 
         if (!session) {
             showAlert("Akses Ditolak", "Silakan login terlebih dahulu", "error");

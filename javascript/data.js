@@ -125,6 +125,7 @@ function kembalikanBuku(tanggalPinjam) {
     });
 
     localStorage.setItem("dataPinjam", JSON.stringify(dataPinjam));
+    localStorage.setItem("books", JSON.stringify(dataBuku));
     showAlert("Kembalikan Buku Berhasil", "Buku berhasil dikembalikan", "success");
     setTimeout(() => location.reload(), 1000);
 }
@@ -193,5 +194,3 @@ function logout() {
     showAlert("Logout Berhasil", "Anda telah logout.", "success");
     setTimeout(() => location.reload(), 1000);
 };
-
-
