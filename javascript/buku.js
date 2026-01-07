@@ -5,7 +5,7 @@ const prepareBook =
             id: 1,
             title: "Tentang Kamu",
             author: "Tere Liye",
-            image: "images/tentangKamu.jpg",
+            image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/9786239554569.jpg",
             description: "Novel kehidupan",
             stok: 5
         },
@@ -13,7 +13,7 @@ const prepareBook =
             id: 2,
             title: "Atomic Habbits",
             author: "James Clear",
-            image: "images/atomicHabbits.jpg",
+            image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/products/-at5xvm154.jpg",
             description: "Buku pengembangan diri",
             stok: 5
         },
@@ -21,7 +21,7 @@ const prepareBook =
             id: 3,
             title: "Psychology of Money",
             author: "Morgan Housel",
-            image: "images/psychologyMoney.jpg",
+            image: "https://bukukita.com/babacms/displaybuku/118741_f.jpg",
             description: "Buku pengembangan diri",
             stok: 5
         },
@@ -29,7 +29,7 @@ const prepareBook =
             id: 4,
             title: "Filosofi Teras",
             author: "Henry Manampiring",
-            image: "images/filosofiTeras.jpg",
+            image: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/picture_meta/2023/11/27/kjf6cgigkomf6sy9o5qauu.jpg",
             description: "Buku filosofi",
             stok: 5
         },
