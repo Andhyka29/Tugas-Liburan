@@ -124,7 +124,7 @@ document.getElementById("loginAdmin").addEventListener('click', () => {
     }
 
     // simpan status login di localStorage
-    localStorage.setItem("sessionLoginAdmin", JSON.stringify({
+    sessionStorage.setItem("sessionLoginAdmin", JSON.stringify({
         usernameAdmin: user.usernameAdmin,
         emailAdmin: user.emailAdmin
     }));

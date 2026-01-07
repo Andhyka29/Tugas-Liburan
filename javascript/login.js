@@ -128,7 +128,7 @@ document.getElementById("login").addEventListener('click', () => {
     }
 
     // simpan status login di localStorage
-    localStorage.setItem("sessionLogin", JSON.stringify({
+    sessionStorage.setItem("sessionLogin", JSON.stringify({
         username: user.username,
         email: user.email
     }));
