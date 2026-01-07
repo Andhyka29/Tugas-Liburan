@@ -37,13 +37,12 @@ const prepareBook =
 
 let books = [];
 const dataBuku = localStorage.getItem("books");
-    if (dataBuku) {
-        books = JSON.parse(dataBuku);
-    } else {
-        books = prepareBook;
-    }
-
-localStorage.setItem("books", JSON.stringify(books));
+if (dataBuku) {
+    books = JSON.parse(dataBuku);
+} else {
+    books = prepareBook;
+    localStorage.setItem("books", JSON.stringify(books));
+}
 
 if (books.length === 0) {
     listBuku.innerHTML =
@@ -65,21 +64,3 @@ books.forEach((buku) => {
     </a>
     `;
 });
-
-// books.forEach((buku, index) => {
-//     listBuku.innerHTML += `
-//     <a href="pinjamBuku.html?id=${prepareBook[index].id}">
-//         <div class="bg-white aspect-[3/4] rounded-xl shadow-lg shadow-gray-900 hover:scale-105 transition">
-//             <img src="${prepareBook[index].image}" class="h-96 w-full object-cover rounded-t-xl">
-//             <div class="p-4">
-//                 <h3 class="font-bold text-lg">${prepareBook[index].title}</h3>
-//                 <p class="text-sm text-gray-600">${prepareBook[index].author}</p>
-//                 <p class="mt-2">${prepareBook[index].description}</p>
-//                 <p class="mt-2">Stok: ${prepareBook[index].stok}</p>
-//             </div>
-//         </div>
-//     </a>
-//     `;
-// });
-
-
