@@ -111,10 +111,15 @@ function formatTanggal(iso) {
 function kembalikanBuku(tanggalPinjam) {
     let dataPinjam =
         JSON.parse(localStorage.getItem("dataPinjam")) || [];
+    let dataBuku = JSON.parse(localStorage.getItem("books")) || [];
 
     dataPinjam = dataPinjam.map(p => {
         if (p.tanggalPinjam === tanggalPinjam) {
             p.status = "Dikembalikan";
+
+            // cari buku dan kembalikan stok
+            const buku = dataBuku.find(b => b.title === p.buku);
+            if (buku) { buku.stok++; }
         }
         return p;
     });
