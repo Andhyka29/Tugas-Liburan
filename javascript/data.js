@@ -179,12 +179,23 @@ function hapusRiwayat(tanggalPinjam) {
 
     let dataPinjam =
         JSON.parse(localStorage.getItem("dataPinjam")) || [];
+    let dataBuku = JSON.parse(localStorage.getItem("books")) || [];
+
+    const riwayatDihapus = dataPinjam.find(p => p.tanggalPinjam === tanggalPinjam);
+
+    if (riwayatDihapus && riwayatDihapus.status !== "Dikembalikan") {
+        const buku = dataBuku.find(b => b.title === riwayatDihapus.buku);
+        if (buku) {
+            buku.stok++;
+        }
+    }
 
     dataPinjam = dataPinjam.filter(
         p => p.tanggalPinjam !== tanggalPinjam
     );
 
     localStorage.setItem("dataPinjam", JSON.stringify(dataPinjam));
+    localStorage.setItem("books", JSON.stringify(dataBuku));
     showAlert("Hapus Riwayat Berhasil", "Riwayat berhasil dihapus", "success");
     setTimeout(() => location.reload(), 1000);
 }
