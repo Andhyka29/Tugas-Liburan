@@ -34,7 +34,7 @@ btnHomePage2.addEventListener('click', () => {
     footerPage.classList.remove('hidden');
 });
 
-const session = JSON.parse(localStorage.getItem("sessionLogin"));
+const session = JSON.parse(sessionStorage.getItem("sessionLogin"));
 const riwayatSection = document.getElementById("riwayatSection");
 const riwayatList = document.getElementById("riwayatList");
 
